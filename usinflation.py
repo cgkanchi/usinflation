@@ -23,7 +23,6 @@ def calculate_inflation(principle, start_year, end_year, inflation_data_file='us
     amount = principle
     for year in xrange(start_year, end_year+1):
         amount += data[year]/100 * amount
-        print year, amount
 
     return amount
 
@@ -32,8 +31,7 @@ def get_user_input():
     end_year = int(raw_input('Enter a end year: '))
     principle = float(raw_input('Enter a starting amount: '))
 
-    calculate_inflation(principle, start_year, end_year)
-    #print principle, 'USD in', start_year, 'is equal to', calculate_inflation(principle, start_year, end_year), 'in', end_year
+    print principle, 'USD in', start_year, 'is equal to', calculate_inflation(principle, start_year, end_year), 'in', end_year
 
 if __name__ == '__main__':
     get_user_input()       
